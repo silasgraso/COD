@@ -19,8 +19,20 @@ namespace COD
             _weapons.Add(new Weapon() { Id = _nextId++, Name = "MP5", Type = "SMG", Muzzle = new Muzzle("Muzzle Brake", 0.19, 0.25), Barrel = new Barrel("FTAC Collapsible", 0.99, 0.65) });
         }
 
-        public List<Weapon> GetAll()
+        public IEnumerable<Weapon> GetAll(string? weaponType = null)
         {
+            IEnumerable<Weapon> weapons = new List<Weapon>(_weapons);
+
+            switch (weaponType)
+            {
+                case null:
+                    return weapons;
+                    break;
+
+                case "assault rifle":
+                   weapons = weapons.Where(w => w.Type == "Assault Rifle");
+                    break;
+            }
             return _weapons;
         }
 
