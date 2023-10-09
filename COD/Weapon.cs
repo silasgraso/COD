@@ -1,12 +1,30 @@
 ﻿namespace COD
 {
-    public class Class1
+    public class Weapon
     {
-        public string name;
-        public int id;
-        public string description;
-        public string type;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public Muzzle Muzzle { get; set; }
 
+        public Barrel Barrel { get; set; }
+
+        public Weapon()
+        {
+            
+        }
+
+        public void ValidateName()
+        {
+            if (Name == null) 
+            {
+                throw new ArgumentNullException();            
+            }
+            if (Name.Length < 3) 
+            {
+                throw new ArgumentException("Must be longer than 3");                        
+            } 
+        }
 
 
     }

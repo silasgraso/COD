@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace COD
 {
-    public class Muzzle
+    public class Barrel
     {
         public string Name { get; set; }
         public double VTunnig { get; set; }
         public double HTunnig { get; set; }
 
-        public Muzzle(string name, double vTunnig, double hTunnig)
+        public Barrel(string name, double vTunnig, double hTunnig)
         {
             Name = name;
             VTunnig = vTunnig;
             HTunnig = hTunnig;
         }
+
+        
     }
 }
