@@ -3,16 +3,11 @@
     public class Weapon
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public Muzzle Muzzle { get; set; }
+        public string? Name { get; set; }
+        public string? Type { get; set; }
+        public Muzzle? Muzzle { get; set; }
 
-        public Barrel Barrel { get; set; }
-
-        public Weapon()
-        {
-            
-        }
+        public Barrel? Barrel { get; set; }
 
         public void ValidateName()
         {

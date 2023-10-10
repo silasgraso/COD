@@ -36,7 +36,7 @@ namespace COD
             return _weapons;
         }
 
-        public Weapon GetById(int id)
+        public Weapon? GetById(int id)
         {
             return _weapons.FirstOrDefault(w => w.Id == id);
         }
@@ -48,9 +48,9 @@ namespace COD
             return weapon;
         }
 
-        public Weapon Remove(int id)
+        public Weapon? Remove(int id)
         {
-            Weapon weapon = GetById(id);
+            Weapon? weapon = GetById(id);
             if (weapon == null)
             {
                 return null;
